@@ -6,6 +6,14 @@ import { bootstrapApplication,provideProtractorTestingSupport } from '@angular/p
 import { AppComponent } from './app/app.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
+//router implementado
+import { provideRouter } from '@angular/router';
+import routeConfig from './app/routes';
+
 bootstrapApplication(AppComponent,
-    {providers: [provideProtractorTestingSupport(), provideAnimations()]})
+    { providers: [
+      provideProtractorTestingSupport(), 
+      provideRouter(routeConfig), //router implementado
+      provideAnimations()
+    ]})
   .catch(err => console.error(err));

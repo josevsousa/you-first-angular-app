@@ -23,6 +23,7 @@ import { HousingService } from '../housing.service';
             [housingLocation]="housingLocation">
           </app-housing-location>
     </section>
+
   `,
   styleUrls: ['./home.component.css']
 })
@@ -31,7 +32,7 @@ export class HomeComponent {
   readonly baseUrl = "https://angular.io/assets/images/tutorials/faa";
   
   housingLocationList: HousingLocation[] = [];
-  housingService: HousingService = inject(HousingService);
+  housingService: HousingService = inject(HousingService); 
 
   constructor(){
     this.housingLocationList = this.housingService.getAllHousingLocations();
