@@ -120,5 +120,10 @@ export class HousingService {
     return this.housingLocationList.find( housingLocation => housingLocation.id === id )
   }
 
+  // coleta dados do formulario para exibir no console apenas
+  submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(`Homes application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`);
+  }
+
 
 }
