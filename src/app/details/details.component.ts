@@ -63,8 +63,15 @@ export class DetailsComponent {
   });
 
   constructor(){
-    const housingLocationId = Number( this.route.snapshot.params['id']);
-    this.housingLocation = this.housingService.getHousingLoactionById( housingLocationId );
+    // const housingLocationId = Number( this.route.snapshot.params['id']);
+    // this.housingLocation = this.housingService.getHousingLoactionById( housingLocationId );
+
+    const housingLocationId = parseInt(this.route.snapshot.params['id'], 10)
+
+    this.housingService.getHousingLoactionById(housingLocationId).then((housingLocation)=>{
+      this.housingLocation = housingLocation;
+    })
+  
   }
 
   submitApllication(){
